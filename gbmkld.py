@@ -3,13 +3,13 @@
 import sys
 
 file=open(sys.argv[1],"rb")
-output=open(sys.argv[1][:-4]+".asm","wb")
+output=open(sys.argv[1][:-4]+".asm","w")
 
 i=0
 j=192
 k=1
 char=file.read(1)
-output.write("gSnkAnim"+str(k)+"\n")
+output.write("gSnkAnim"+str(k)+":\n")
 output.write("\tld\tHL,\t$9000\n")
 
 while len(char)!=0:
@@ -21,10 +21,10 @@ while len(char)!=0:
   i=0
   output.write("\tret\n")
   k+=1
-  output.write("gSnkAnim"+str(k)+"\n")
+  output.write("gSnkAnim"+str(k)+":\n")
   output.write("\tld\tHL,\t$9000\n")
  char=file.read(1)
-print (k-1)*j+i
-print k
+print((k-1)*j+i)
+print(k)
 output.write("\tret\n")
 output.close()

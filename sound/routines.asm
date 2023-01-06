@@ -1,0 +1,1 @@
+    INCLUDE "sound/music.asm"

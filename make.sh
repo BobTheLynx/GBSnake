@@ -1,13 +1,11 @@
+rm ./snkbin.gb
 echo ";-------ASSEMBLING------------------------------------------------------;"
-rgbasm -o snkbin.obj -p 255 main.asm;
+rgbasm -Weverything --halt-without-nop -o snkbin.obj -p 0 main.asm;
 echo ""
 echo ";-------LINKING---------------------------------------------------------;"
-rgblink -p 255 -o snkbin.gb -n snkbin.sym snkbin.obj;
+rgblink -d -p 0 -o snkbin.gb -m snkbin.map -n snkbin.sym snkbin.obj;
 echo ""
 echo ";-------FIXING----------------------------------------------------------;"
-rgbfix -v -p 255 snkbin.gb
+rgbfix -v -p 0 snkbin.gb
 echo ""
-
-cp snkbin.gb "/Users/yvar/Library/Application Support/com.miller.bgb_149327856815280/drive_c/winebottler/snake.gb"
-
-cp snkbin.sym "/Users/yvar/Library/Application Support/com.miller.bgb_149327856815280/drive_c/winebottler/snake.sym"
+sameboy ./snkbin.gb 

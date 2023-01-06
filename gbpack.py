@@ -25,8 +25,8 @@ for y in range(img.get_height()):
 pygame.image.save(out,sys.argv[1][:-4]+".png")
 output=open(sys.argv[1][:-4]+".bin","wb")
 
-for yt in range(out.get_height()/16):
- for xt in range(out.get_width()/8):
+for yt in range(int(out.get_height()/16)):
+ for xt in range(int(out.get_width()/8)):
   for y in range(16):
    byte=0
    for x in range(8):
@@ -34,4 +34,4 @@ for yt in range(out.get_height()/16):
     color=out.get_at((xt*8+x,yt*16+y))
     if color.r+color.g+color.b<384:
      byte|=1
-   output.write(chr(byte))
+   output.write(bytes([byte,]))

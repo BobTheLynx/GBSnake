@@ -1,0 +1,1 @@
+	INCLUDE "snake/move.asm"

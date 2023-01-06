@@ -1,4 +1,4 @@
-gSnkAnim1
+gSnkAnim1:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -385,7 +385,7 @@ gSnkAnim1
 	ld	[HL],	$5a
 	inc	L
 	ret
-gSnkAnim2
+gSnkAnim2:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -772,7 +772,7 @@ gSnkAnim2
 	ld	[HL],	$5e
 	inc	L
 	ret
-gSnkAnim3
+gSnkAnim3:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -1159,7 +1159,7 @@ gSnkAnim3
 	ld	[HL],	$4e
 	inc	L
 	ret
-gSnkAnim4
+gSnkAnim4:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -1546,7 +1546,7 @@ gSnkAnim4
 	ld	[HL],	$56
 	inc	L
 	ret
-gSnkAnim5
+gSnkAnim5:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -1933,7 +1933,7 @@ gSnkAnim5
 	ld	[HL],	$2b
 	inc	L
 	ret
-gSnkAnim6
+gSnkAnim6:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -2320,7 +2320,7 @@ gSnkAnim6
 	ld	[HL],	$2d
 	inc	L
 	ret
-gSnkAnim7
+gSnkAnim7:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -2707,7 +2707,7 @@ gSnkAnim7
 	ld	[HL],	$2f
 	inc	L
 	ret
-gSnkAnim8
+gSnkAnim8:
 	ld	HL,	$9000
 	ld	[HL],	$0
 	inc	L
@@ -3094,6 +3094,6 @@ gSnkAnim8
 	ld	[HL],	$27
 	inc	L
 	ret
-gSnkAnim9
+gSnkAnim9:
 	ld	HL,	$9000
 	ret

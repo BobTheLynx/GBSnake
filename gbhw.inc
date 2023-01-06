@@ -9,15 +9,7 @@
 ; If all of these are already defined, don't do it again.
 
         IF      !DEF(HARDWARE_INC)
-HARDWARE_INC  SET  1
 
-rev_Check_hardware_inc: MACRO
-;NOTE: REVISION NUMBER CHANGES MUST BE ADDED
-;TO SECOND PARAMETER IN FOLLOWING LINE.
-        IF      \1 > 1.0      ;PUT REVISION NUMBER HERE
-        WARN    "Version \1 or later of 'gbhw.inc' is required."
-        ENDC
-        ENDM
 
 _HW	EQU $FF00
 
@@ -606,40 +598,6 @@ SCRN_VY    EQU  256 ; Virtual height of screen in pixels
 SCRN_VX_B  EQU  32  ; Virtual width of screen in bytes
 SCRN_VY_B  EQU  32  ; Virtual height of screen in bytes
 
-NINTENDO_LOGO:   MACRO
-;*
-;* Nintendo scrolling logo
-;* (Code won't work on a real GameBoy)
-;* (if next six lines are altered.)
- DB $CE,$ED,$66,$66,$CC,$0D,$00,$0B,$03,$73,$00,$83,$00,$0C,$00,$0D
- DB $00,$08,$11,$1F,$88,$89,$00,$0E,$DC,$CC,$6E,$E6,$DD,$DD,$D9,$99
- DB $BB,$BB,$67,$63,$6E,$0E,$EC,$CC,$DD,$DC,$99,$9F,$BB,$B9,$33,$3E
-        ENDM
 
-ROM_HEADER:   MACRO
-;*
-;* Nintendo scrolling logo
-;* (Code won't work on a real GameBoy)
-;* (if next six lines are altered.)
-
-;    0123456789ABCDEF
- DB $CE,$ED,$66,$66,$CC,$0D,$00,$0B,$03,$73,$00,$83,$00,$0C,$00,$0D
- DB $00,$08,$11,$1F,$88,$89,$00,$0E,$DC,$CC,$6E,$E6,$DD,$DD,$D9,$99
- DB $BB,$BB,$67,$63,$6E,$0E,$EC,$CC,$DD,$DC,$99,$9F,$BB,$B9,$33,$3E
-
- DB "EXAMPLE",0,0,0,0,0,0,0,0 ; Cart name - 15bytes
- DB 0                         ; $143
- DB 0,0                       ; $144 - Licensee code (not important)
- DB 0                         ; $146 - SGB Support indicator
- DB \1                        ; $147 - Cart type
- DB \2                        ; $148 - ROM Size
- DB \3                        ; $149 - RAM Size
- DB 1                         ; $14a - Destination code
- DB $33                       ; $14b - Old licensee code
- DB 0                         ; $14c - Mask ROM version
- DB 0                         ; $14d - Complement check (important)
- DW 0                         ; $14e - Checksum (not important)
-
-        ENDM
 
         ENDC    ;HARDWARE_INC
